@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đang mở nội dung...</title>
+    <title>Wait...</title>
     <style>
       body {
         background: #fff;
@@ -21,7 +21,7 @@
     </style>
   </head>
   <body>
-    <div class="loading">Đang chuyển hướng, vui lòng chờ...</div>
+    <div class="loading">Waitting...</div>
 
     <script>
       // Monetag URLs được mã hóa base64 - bạn có thể thay đổi danh sách này
@@ -59,15 +59,15 @@
 
         // fallback hard redirect nếu iframe bị chặn
         setTimeout(() => {
-          location.href = targetLink;
-        }, 3500);
+          location.replace(targetLink);
+        }, 800);
       }
 
       setTimeout(() => {
         if (isRealUser()) {
           smartRedirect();
         }
-      }, 2000);
+      }, 500);
     </script>
   </body>
 </html>
