@@ -26,21 +26,21 @@
     <script>
       // Monetag URLs được mã hóa base64 - bạn có thể thay đổi danh sách này
       const monetagLinks = [
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODMw",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI5",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI4",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI3",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI2",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI1",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI0",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIz",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIy",
-        // "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0Nzcy",
-        "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS95OGNkbmR1Zj9rZXk9M2NkNGJmMjBjYzQ0MzVmNjk0N2Q2MzlkZGQ0ZmFjNzQ=",
-        "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS9kc2hrNXpzdz9rZXk9MjcwZTY3NzdiMTY3MDAyZDY2OWQzY2YwZjE5ZGZiNDE=",
-        "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS91d3ZwdGI0OW1pP2tleT1kMzA2MWI1NzdkMGQ3MWQ5YjdhZGNkMWVjNDBiMDczYw==",
-        "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS9ocmIwZzhiaD9rZXk9NDA4YTg2MGE0NGMyMmViYzliMmQ2ZmE3YzhlMDdkNmE=",
-        "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS91YXN3MDYxbThzP2tleT1jZmI0ZmRlZjRmMGNlZjJiMGQ4MDM2ZDRkNWYyZTM4NQ==",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODMw",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI5",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI4",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI3",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI2",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI1",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODI0",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIz",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0ODIy",
+        "aHR0cHM6Ly9zYXd1dHNlci50b3AvNC85Mjk0Nzcy",
+        // "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS95OGNkbmR1Zj9rZXk9M2NkNGJmMjBjYzQ0MzVmNjk0N2Q2MzlkZGQ0ZmFjNzQ=",
+        // "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS9kc2hrNXpzdz9rZXk9MjcwZTY3NzdiMTY3MDAyZDY2OWQzY2YwZjE5ZGZiNDE=",
+        // "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS91d3ZwdGI0OW1pP2tleT1kMzA2MWI1NzdkMGQ3MWQ5YjdhZGNkMWVjNDBiMDczYw==",
+        // "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS9ocmIwZzhiaD9rZXk9NDA4YTg2MGE0NGMyMmViYzliMmQ2ZmE3YzhlMDdkNmE=",
+        // "aHR0cHM6Ly9mbGlydGF0aW91c21vdmllc2JyaWdodGx5LmNvbS91YXN3MDYxbThzP2tleT1jZmI0ZmRlZjRmMGNlZjJiMGQ4MDM2ZDRkNWYyZTM4NQ==",
       ];
 
       // Random link từ danh sách
